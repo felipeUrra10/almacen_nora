@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_almacen_nora_cliente,almacen_nora.cliente,model_almacen_nora_cliente,base.group_user,1,1,1,1
+access_almacen_nora_detalle_venta,almacen_nora.detalle_venta,model_almacen_nora_detalle_venta,base.group_user,1,1,1,1
+access_almacen_nora_venta,almacen_nora.venta,model_almacen_nora_venta,base.group_user,1,1,1,1
+access_almacen_nora_producto,almacen_nora.producto,model_almacen_nora_producto,base.group_user,1,1,1,1

@@ -1,0 +1,85 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="venta">
+      <field name="name">Lista de Ventas</field>
+      <field name="model">almacen_nora.venta</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="cliente_id"/>
+          <field name="fecha_venta"/>
+          <field name="total_venta"/>
+          <field name="detalle_venta_ids"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="venta_form">
+      <field name="name">Formulario de ventas</field>
+      <field name="model">almacen_nora.venta</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group col="2">
+              <field name="cliente_id"/>
+              <field name="fecha_venta"/>
+              <field name="total_venta"/>
+            </group>
+            <notebook>
+              <page>
+                <field name="detalle_venta_ids"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="action_almacen_nora_venta_view">
+      <field name="name">ventas</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">almacen_nora.venta</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="almacen_nora.action_server">
+      <field name="name">almacen_nora server</field>
+      <field name="model_id" ref="model_almacen_nora_almacen_nora"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="almacen_nora" id="almacen_nora.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="almacen_nora.menu_1" parent="almacen_nora.menu_root"/>
+    <menuitem name="Menu 2" id="almacen_nora.menu_2" parent="almacen_nora.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="almacen_nora.menu_1_list" parent="almacen_nora.menu_1"
+              action="almacen_nora.action_window"/>
+    <menuitem name="Server to list" id="almacen_nora" parent="almacen_nora.menu_2"
+              action="almacen_nora.action_server"/>
+-->
+  </data>
+</odoo>
